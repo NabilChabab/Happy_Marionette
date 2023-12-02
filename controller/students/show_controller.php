@@ -1,10 +1,14 @@
 <?php
-    include "../../../constant/database/connect.php";
+require __DIR__ ."/../../connect.php";
+require "../../model/functions.php";
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type");
 
 
     $response = array();
     if($connect){
-        $sql = "SELECT * FROM `students` ORDER BY `nom` ASC";
+        $sql = ShowStudents();
         $result = mysqli_query($connect , $sql);
         if($result){
             header("Content-Type: JSON");

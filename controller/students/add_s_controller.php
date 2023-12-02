@@ -1,7 +1,7 @@
 <?php
 
 
-require __DIR__ ."/../connect.php";
+require __DIR__ ."/../../connect.php";
 
 
 if(isset($_POST['submit'])){
@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
         else{
             echo "<h3> Fail!</h3>";
         }
-        header("location:../view/admin/students/students.php?msg=new student added successfuly");
+        header("location:../../view/admin/students/students.php?msg=new student added successfuly");
     }
     else{
         echo "failed :".mysqli_error();

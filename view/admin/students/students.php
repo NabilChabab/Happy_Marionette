@@ -1,13 +1,6 @@
 <?php
-    include "../../../connect.php";
-    // require'../../../constant/database/connect.php';
-
-    $query = "SELECT * FROM `students` ORDER BY `nom` ASC";
-    $result = mysqli_query($connect , $query);
-
-    
+include "../../../connect.php";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -130,7 +123,7 @@
 
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Search here" name="search">
+                        <input type="text" placeholder="Search here" name="search" id="search">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
@@ -210,7 +203,7 @@
                         </p>
                         <a href="#" id="close_msg" style="color:white;font-size:25px;"><ion-icon name="close-outline"></ion-icon></a>
                     </div>
-                    <table>
+                    <table id="data-table">
                         <thead>
                             <tr>
                                 <td>Numero</td>
@@ -224,23 +217,7 @@
                         </thead>
 
                         <tbody>
-                            <?php
-                                while($rows = mysqli_fetch_assoc($result)){
-                            
-                            ?>
-                            <tr>
-                                <td><?php echo $rows['id']?></td>
-                                <td><img src="../../../assets/images/<?php echo $rows['image']?>" style="max-width:40px;border-radius:50%;"></td>
-                                <td><?php echo $rows['nom']?></td>
-                                <td><?php echo $rows['prenom']?></td>
-                                <td><?php echo $rows['email']?></td>
-                                <td><?php echo $rows['gender']?></td>
-                                <td><a href="edit.php?id=<?php echo $rows['id']?>" style="color:black;font-size:20px;margin-right:20px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete.php?id=<?php echo $rows['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
-                        
-                            </tr>
-                            <?php
-                                }
-                             ?>   
+                               
                         </tbody>
                     </table>
                 </div>
@@ -272,7 +249,6 @@
                                 <td><?php echo $row['start_date']?></td>
                                 <td><?php echo $row['end_date']?></td>
                                 
-                        
                             </tr>
                             <?php
                                 }
@@ -289,6 +265,7 @@
 
     <!-- =========== Scripts =========  -->
     <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/show.js"></script>
 
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

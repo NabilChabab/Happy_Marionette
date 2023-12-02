@@ -1,72 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fetch Data and Display in Table</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
+<style>
+    .admin{
+        display:flex;
+        gap:1rem;
+    }
+    .name p{
+        font-weight:bold;
+        color:grey;
+    }
+</style>
 <body>
-  <label for="search">Search:</label>
-  <input type="text" id="search" placeholder="Enter username">
-  <table id="data-table" border="1">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Prenom</th>
-        <th>Nom</th>
-        <th>Email</th>
-        <th>Gender</th>
-        <!-- Add more columns as needed based on the data structure -->
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                        <ion-icon name="book-outline"></ion-icon>
+                        </span>
+                        <span class="title">Happy-marionnette</span>
+                    </a>
+                </li>
 
-  <script>
-    async function getData() {
-      let response = await fetch('../../constant/api.php');
-      let data = await response.json();
-      return data;
-    }
+                <li>
+                    <a href="../admin.php">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
 
-    window.onload = () => {
-      getData().then(data => {
-        displayDataInTable(data);
-      });
-    };
+                <li class="active">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Students</span>
+                    </a>
+                </li>
 
-    function displayDataInTable(data) {
-      const tableBody = document.querySelector("#data-table tbody");
-      tableBody.innerHTML = ''; // Clear existing rows
+                <li>
+                    <a href="../teachers/teachers.php">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Teachers</span>
+                    </a>
+                </li>
 
-      const searchInput = document.getElementById("search");
-      const searchTerm = searchInput.value.toLowerCase();
+                <li>
+                    <a href="../booking/booking.php">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Booking</span>
+                    </a>
+                </li>
 
-      data.forEach(item => {
-        // Check if the search term matches the username
-        if (item.nom.toLowerCase().includes(searchTerm) || item.prenom.toLowerCase().includes(searchTerm)) {
-          const row = tableBody.insertRow();
-          row.insertCell(0).textContent = item.id;
-          row.insertCell(1).textContent = item.nom;
-          row.insertCell(2).textContent = item.prenom;
-          row.insertCell(3).textContent = item.email;
-          row.insertCell(4).textContent = item.gender;
+                
 
-          // Create an img element for the avatar
-          
-        }
-      });
-    }
-    
-    // Attach an event listener to the search input to update the table on input change
-    document.getElementById("search").addEventListener("input", () => {
-      getData().then(data => {
-        displayDataInTable(data);
-      });
-    });
-  </script>
+                <li>
+                    <a href="../roles/roles.php">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Roles</span>
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="../notifications/notifications.php">
+                        <span class="icon">
+                            <ion-icon name="notifications-outline"></ion-icon>
+                        </span>
+                        <span class="title">Notifications</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../settings/settings.php">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../../../auth/login.php">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here" name="search" id="search">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="admin">
+                    <div class="user">
+                        <img src="../../../assets/images/me.jpg" alt="">
+                    </div>
+                    <div class="name">
+                        <p>Nabil CHABAB</p>
+                        <p>Admin</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Daily Views</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">800</div>
+                        <div class="cardName">Total Students</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Comments</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">42</div>
+                        <div class="cardName">Total Teachers</div>
+                    </div>
+
+                    <div class="iconBx">
+                    <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Recent Students</h2>
+                        <a href="add_students.php" class="btn">Add New</a>
+                    </div>
+                    <div class="msg" style="background-color:rgb(105, 163, 105);padding:15px;margin:15px;border-radius:5px;display:flex;justify-content:space-between;align-items:center;display:none;">
+                        <p>
+                            <?php
+                                if(isset($_GET['msg'])){
+                                    $msg = $_GET['msg'];
+                                    echo $msg;
+                                }
+                            ?>
+                        </p>
+                        <a href="#" id="close_msg" style="color:white;font-size:25px;"><ion-icon name="close-outline"></ion-icon></a>
+                    </div>
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <td>Numero</td>
+                                <td>Profile</td>
+                                <td>Prenom</td>
+                                <td>Nom</td>
+                                <td>Email</td>
+                                <td>Gender</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ================= New Customers ================ -->
+                <div class="recentCustomers">
+                    <div class="cardHeader">
+                        <h2>Recent Students Booking</h2>
+                    </div>
+                    
+                  
+                </div>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+        </div>
+    </div>
+
+    <!-- =========== Scripts =========  -->
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/show.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

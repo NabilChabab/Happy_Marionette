@@ -1,6 +1,3 @@
-<!--  -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +53,7 @@
       </div>
 
       <div class="container d-flex justify-content-center" style="margin-top:5%;">
-         <form action="../../../controller/add_s_controller.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+         <form action="../../../controller/students/add_s_controller.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
                 <div class="card">
                     <img src="../../../assets/images/avatar.jpg" alt="image" id="image">
                     <label for="input-file">Choose Image</label>
