@@ -16,6 +16,9 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result)>0){
         $error[] = "user already exist!";
     }
+    elseif(empty($email)){
+        $error[] = "Fill All Inputs!";
+    }
     else{
         if($password != $co_passowrd){
             $error[] = "password not matched!";
@@ -23,7 +26,7 @@ if(isset($_POST['submit'])){
         else{
             $insert = "INSERT INTO `user_role`(`name`, `email`, `password`, `role`) VALUES ('$name','$email','$password','$roles')";
             mysqli_query($connect,$insert);
-            header("location:login.php");
+            header("location:../view/admin/roles/roles.php");
         }
     }
 }

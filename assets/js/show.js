@@ -22,7 +22,6 @@ function getData(callback) {
   function displayDataInTable(data) {
     const tableBody = document.querySelector("#data-table tbody");
     tableBody.innerHTML = '';
-  
     const searchInput = document.getElementById("search");
     const searchTerm = searchInput.value.toLowerCase();
   

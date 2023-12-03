@@ -213,13 +213,13 @@ $result = mysqli_query($connect , $query);
                             while($rows = mysqli_fetch_assoc($result)){ 
                         ?>
                             <tr>
-                                <td style="font-size:12px;"><?php echo $rows['book_name']?></td>
-                                <td style="font-size:12px;"><?php echo $rows['category']?></td>
-                                <td style="font-size:12px;"><?php echo $rows['start_date']?></td>
-                                <td style="font-size:12px;"><?php echo $rows['end_date']?></td>
-                                <td style="font-size:12px;"><?php echo $rows['teacher_name']?></td>
-                                <td style="font-size:12px;"><?php echo $rows['nom']?></td>
-                                <td style="font-size:12px;"><span class="status pending">Pending</span></td>
+                                <td style="font-size:15px;"><?php echo $rows['book_name']?></td>
+                                <td style="font-size:15px;"><?php echo $rows['category']?></td>
+                                <td style="font-size:15px;"><?php echo $rows['start_date']?></td>
+                                <td style="font-size:15px;"><?php echo $rows['end_date']?></td>
+                                <td style="font-size:15px;"><?php echo $rows['teacher_name']?></td>
+                                <td style="font-size:15px;"><?php echo $rows['nom']?></td>
+                                <td style="font-size:15px;"><span class="status pending">Pending</span></td>
                                 <td><a href="edit_booking.php?id=<?= $row['id']?>" style="color:black;font-size:20px;margin-right:2px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete_booking.php?id=<?= $row['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
                             </tr>
                             <?php
