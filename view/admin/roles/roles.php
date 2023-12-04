@@ -215,7 +215,7 @@ $result = mysqli_query($connect , $query);
                                 <td style="font-size:15px;"><?php echo $rows['name']?></td>
                                 <td style="font-size:15px;"><?php echo $rows['email']?></td>
                                 <td style="font-size:15px;"><span class="status inProgress"><?php echo $rows['role']?></span></td>
-                                <td><a href="" style="color:black;font-size:20px;margin-right:2px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete.php?id=<?= $rows['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
+                                <td><a href="edit_roles.php?id=<?= $rows['id']?>" style="color:black;font-size:20px;margin-right:20px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete.php?id=<?= $rows['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
                             </tr>
                             <?php
                                 }

@@ -1,10 +1,8 @@
+
 <?php
-include "../controller/register_controller.php";
+include "../../controller/register_controller.php";
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">

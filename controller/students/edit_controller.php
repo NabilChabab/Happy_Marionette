@@ -2,6 +2,7 @@
 
 
 require __DIR__ ."/../../connect.php";
+include  __DIR__ ."/../../model/functions.php";
 $id = $_GET['id'];
 
 if(isset($_POST['submit'])){
@@ -10,11 +11,15 @@ if(isset($_POST['submit'])){
     $cin = $_POST['cin'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
-    $requet = "UPDATE `students` SET `nom`='$f_name',`prenom`='$l_name',`cin`='$cin',`email`='$email',`gender`='$gender'  WHERE id = $id";
-    $query = mysqli_query($connect , $requet);
+    $requet = UpdateStudents();
+    $query = $connect->prepare($requet);
 
     if($query){
-        header("location:students.php?msg=student Informations Updated successfuly");
+        $query->bind_param("sssssi",$f_name,$l_name,$cin,$email,$gender,$id);
+        if($query->execute()){
+
+            header("location:students.php?msg=student Informations Updated successfuly");
+        }
     }
     else{
         echo "failed :".mysqli_error();

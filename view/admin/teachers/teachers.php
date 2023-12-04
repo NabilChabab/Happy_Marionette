@@ -106,7 +106,7 @@ $result = mysqli_query($connect , $query);
                 </li>
 
                 <li>
-                    <a href="../../../auth/login.php">
+                    <a href="../../../view/auth/login.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>

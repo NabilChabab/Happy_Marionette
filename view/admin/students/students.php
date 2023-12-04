@@ -104,7 +104,7 @@ include "../../../connect.php";
                 </li>
 
                 <li>
-                    <a href="../../../auth/login.php">
+                    <a href="../../../view/auth/login.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -233,8 +233,7 @@ include "../../../connect.php";
                           FROM `booking`
                           INNER JOIN `students` ON booking.student_id = students.id
                           INNER JOIN `teachers` ON booking.teacher_id = teachers.id
-                          ORDER BY booking.start_date DESC
-                          LIMIT 10;";
+                          ORDER BY booking.start_date DESC";
                           $results = mysqli_query($connect , $querys);
                         ?>
                         <tbody>
@@ -244,10 +243,10 @@ include "../../../connect.php";
                             ?>
                             <tr>
                                 
-                                <td><?php echo $row['student_name']?></td>
-                                <td><?php echo $row['book_name']?></td>
-                                <td><?php echo $row['start_date']?></td>
-                                <td><?php echo $row['end_date']?></td>
+                                <td style="font-size:15px"><?php echo $row['student_name']?></td>
+                                <td style="font-size:15px"><?php echo $row['book_name']?></td>
+                                <td style="font-size:15px"><?php echo $row['start_date']?></td>
+                                <td style="font-size:15px"><?php echo $row['end_date']?></td>
                                 
                             </tr>
                             <?php

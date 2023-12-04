@@ -220,7 +220,7 @@ $result = mysqli_query($connect , $query);
                                 <td style="font-size:15px;"><?php echo $rows['teacher_name']?></td>
                                 <td style="font-size:15px;"><?php echo $rows['nom']?></td>
                                 <td style="font-size:15px;"><span class="status pending">Pending</span></td>
-                                <td><a href="edit_booking.php?id=<?= $row['id']?>" style="color:black;font-size:20px;margin-right:2px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete_booking.php?id=<?= $row['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
+                                <td><a href="edit_booking.php?id=<?= $rows['id']?>" style="color:black;font-size:20px;margin-right:2px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete_booking.php?id=<?= $rows['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
                             </tr>
                             <?php
                                 }
@@ -245,6 +245,72 @@ $result = mysqli_query($connect , $query);
                         </thead>
 
                         <tbody>
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
+                            <tr>
+                                <td>Nabil</td>
+                                <td>$1200</td>
+                                <td>Paid</td>
+                                <td><span class="status delivered">Delivered</span></td>
+                            </tr>
                             <tr>
                                 <td>Nabil</td>
                                 <td>$1200</td>

@@ -83,7 +83,6 @@ if(isset($_POST['submit'])){
       </div>
 
       <?php
-        include "../connect.php";
         $requet = "SELECT * FROM `booking` WHERE id = $id LIMIT 1";
         $query = mysqli_query($connect , $requet);
         $row = mysqli_fetch_assoc($query);

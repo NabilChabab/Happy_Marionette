@@ -1,6 +1,6 @@
 <?php
 
-include "../connect.php";
+require __DIR__ ."../../connect.php";
 
 if(isset($_POST['submit'])){
     $name = $_POST['name'];

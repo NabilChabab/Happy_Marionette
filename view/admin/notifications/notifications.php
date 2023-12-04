@@ -189,39 +189,15 @@ $result = mysqli_query($connect , $query);
             <!-- ================ Order Details List ================= -->
             <div class="details">
                 <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Recent Orders</h2>
-                        <a href="add_role.php" class="btn">Add New</a>
-                    </div>
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>ID</td>
-                                <td>Name</td>
-                                <td>Email</td>
-                                <td>Role</td>
-                                <td>Action</td>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                        <?php
-                           
-                            while($rows = mysqli_fetch_assoc($result)){ 
-                        ?>
-                            <tr>
-                                <td style="font-size:15px;"><?php echo $rows['id']?></td>
-                                <td style="font-size:15px;"><?php echo $rows['name']?></td>
-                                <td style="font-size:15px;"><?php echo $rows['email']?></td>
-                                <td style="font-size:15px;"><span class="status inProgress"><?php echo $rows['role']?></span></td>
-                                <td><a href="" style="color:black;font-size:20px;margin-right:2px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete.php?id=<?= $rows['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
-                            </tr>
-                            <?php
-                                }
-                            ?>
-                        </tbody>
-                    </table>
+                   
+                    <form action="" style="display:flex;flex-direction:column;gap:20px;">
+                        <textarea name="msg" id="msg" cols="30" rows="10" style="border-radius:20px;padding:10px;width:400px;" placeholder="Type a Message for notification"></textarea>
+                        <select name="role" id="" style="border-radius:10px;padding:15px;width:400px;">
+                            <option value="">Teachers</option>
+                            <option value="">Students</option>
+                        </select>
+                        <button class="msg" type="submit" name="submit" style="border-radius:10px;padding:15px;width:400px;border:none;">Send Notification</button>
+                    </form>
                 </div>
 
                 <!-- ================= New Customers ================ -->
