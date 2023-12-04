@@ -4,6 +4,7 @@ include "../../../connect.php";
 $query = "SELECT * FROM `teachers` ORDER BY `nom` ASC";
 $result = mysqli_query($connect , $query);
 
+
 ?>
 
 
@@ -135,8 +136,8 @@ $result = mysqli_query($connect , $query);
                         <img src="../../../assets/images/me.jpg" alt="">
                     </div>
                     <div class="name">
-                        <p>Nabil CHABAB</p>
-                        <p>Admin</p>
+                        <p><?php echo isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : ''; ?></p>
+                        <p><?php echo isset($_COOKIE['user_role']) ? $_COOKIE['user_role'] : ''; ?></p>
                     </div>
                 </div>
             </div>

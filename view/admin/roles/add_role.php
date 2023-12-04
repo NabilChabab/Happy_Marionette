@@ -1,3 +1,7 @@
+<?php
+include "../../../controller/register_controller.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +50,7 @@
         color:red;
         width:100%;
         display:flex;
-        margin-left:30%;
+        margin-left:40%;
         margin-bottom:20px;
       }
    </style>
@@ -60,7 +64,7 @@
       </div>
 
       <div class="container d-flex justify-content-center" style="margin-top:5%;">
-         <form action="../../../controller/register_controller.php" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
+         <form action="" method="post" enctype="multipart/form-data" style="width:50vw; min-width:300px;">
          <?php
                     if(isset($error)){
                         foreach($error as $error){
@@ -73,8 +77,6 @@
                       <input type="text" id="firstname" class="form-control" placeholder="FullName" name="name"/>
                       <p class="text-danger"></p>
                 </div>
-                
-
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                   <input type="email" id="email" class="form-control" placeholder="Email" name="email"/>

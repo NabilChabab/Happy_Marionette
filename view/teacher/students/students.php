@@ -1,10 +1,8 @@
 <?php
-    include "../../../constant/database/connect.php";
+include "../../../connect.php";
 
-    $query = "SELECT * FROM `students` ORDER BY `nom` ASC";
-    $result = mysqli_query($connect , $query);
+
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +15,16 @@
     <link rel="stylesheet" href="../../../assets/css/style.css">
 </head>
 
+<style>
+    .admin{
+        display:flex;
+        gap:1rem;
+    }
+    .name p{
+        font-weight:bold;
+        color:grey;
+    }
+</style>
 <body>
     <!-- =============== Navigation ================ -->
     <div class="container">
@@ -47,6 +55,14 @@
                         </span>
                         <span class="title">Students</span>
                     </a>
+                </li>                
+                <li>
+                    <a href="../notifications/notifications.php">
+                        <span class="icon">
+                            <ion-icon name="notifications-outline"></ion-icon>
+                        </span>
+                        <span class="title">Notifications</span>
+                    </a>
                 </li>
 
                 <li>
@@ -59,7 +75,7 @@
                 </li>
 
                 <li>
-                    <a href="../../../auth/login.php">
+                    <a href="../../../controller/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -78,13 +94,19 @@
 
                 <div class="search">
                     <label>
-                        <input type="text" placeholder="Search here">
+                        <input type="text" placeholder="Search here" name="search" id="search">
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
 
-                <div class="user">
-                    <img src="../../../assets/images/me.jpg" alt="">
+                <div class="admin">
+                    <div class="user">
+                        <img src="../../../assets/images/profilephoto.jfif" alt="">
+                    </div>
+                    <div class="name">
+                        <p><?php echo isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : ''; ?></p>
+                        <p><?php echo isset($_COOKIE['user_role']) ? $_COOKIE['user_role'] : ''; ?></p>
+                    </div>
                 </div>
             </div>
 
@@ -124,12 +146,12 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">$7,842</div>
-                        <div class="cardName">Earning</div>
+                        <div class="numbers">42</div>
+                        <div class="cardName">Total Teachers</div>
                     </div>
 
                     <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                    <ion-icon name="people-outline"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -138,7 +160,7 @@
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>Recent Orders</h2>
+                        <h2>Recent Students</h2>
                         <a href="add_students.php" class="btn">Add New</a>
                     </div>
                     <div class="msg" style="background-color:rgb(105, 163, 105);padding:15px;margin:15px;border-radius:5px;display:flex;justify-content:space-between;align-items:center;display:none;">
@@ -152,7 +174,7 @@
                         </p>
                         <a href="#" id="close_msg" style="color:white;font-size:25px;"><ion-icon name="close-outline"></ion-icon></a>
                     </div>
-                    <table>
+                    <table id="data-table">
                         <thead>
                             <tr>
                                 <td>Numero</td>
@@ -166,23 +188,7 @@
                         </thead>
 
                         <tbody>
-                            <?php
-                                while($rows = mysqli_fetch_assoc($result)){
-                            
-                            ?>
-                            <tr>
-                                <td><?php echo $rows['id']?></td>
-                                <td><img src="../../../assets/images/<?php echo $rows['image']?>" style="max-width:40px;border-radius:50%;"></td>
-                                <td><?php echo $rows['nom']?></td>
-                                <td><?php echo $rows['prenom']?></td>
-                                <td><?php echo $rows['email']?></td>
-                                <td><?php echo $rows['gender']?></td>
-                                <td><a href="edit.php?id=<?php echo $rows['id']?>" style="color:black;font-size:20px;margin-right:20px"><ion-icon name="pencil-outline"></ion-icon></a><a href="delete.php?id=<?php echo $rows['id']?>" style="color:red;font-size:20px;"><ion-icon name="close-circle-outline"></ion-icon></a></td>
-                        
-                            </tr>
-                            <?php
-                                }
-                             ?>   
+                               
                         </tbody>
                     </table>
                 </div>
@@ -190,9 +196,35 @@
                 <!-- ================= New Customers ================ -->
                 <div class="recentCustomers">
                     <div class="cardHeader">
-                        <h2>Recent Customers</h2>
+                        <h2>Recent Students Booking</h2>
                     </div>
-
+                    <table>
+                        <?php
+                          $querys = "SELECT booking.*, students.nom AS student_name, teachers.nom AS teacher_name
+                          FROM `booking`
+                          INNER JOIN `students` ON booking.student_id = students.id
+                          INNER JOIN `teachers` ON booking.teacher_id = teachers.id
+                          ORDER BY booking.start_date DESC";
+                          $results = mysqli_query($connect , $querys);
+                        ?>
+                        <tbody>
+                            <?php
+                                while($row = mysqli_fetch_assoc($results)){
+                            
+                            ?>
+                            <tr>
+                                
+                                <td style="font-size:15px"><?php echo $row['student_name']?></td>
+                                <td style="font-size:15px"><?php echo $row['book_name']?></td>
+                                <td style="font-size:15px"><?php echo $row['start_date']?></td>
+                                <td style="font-size:15px"><?php echo $row['end_date']?></td>
+                                
+                            </tr>
+                            <?php
+                                }
+                             ?>   
+                        </tbody>
+                    </table>
                   
                 </div>
             </div>
@@ -203,6 +235,7 @@
 
     <!-- =========== Scripts =========  -->
     <script src="../../../assets/js/main.js"></script>
+    <script src="../../../assets/js/show.js"></script>
 
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

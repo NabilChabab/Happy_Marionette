@@ -99,7 +99,7 @@
                 </li>
 
                 <li>
-                    <a href="../../auth/login.php">
+                    <a href="../../controller/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -128,8 +128,8 @@
                         <img src="../../assets/images/me.jpg" alt="">
                     </div>
                     <div class="name">
-                        <p>Nabil CHABAB</p>
-                        <p>Admin</p>
+                        <p><?php echo isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : ''; ?></p>
+                        <p><?php echo isset($_COOKIE['user_role']) ? $_COOKIE['user_role'] : ''; ?></p>
                     </div>
                 </div>
             </div>
@@ -148,12 +148,12 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Sales</div>
+                        <div class="numbers">800</div>
+                        <div class="cardName">Total Students</div>
                     </div>
 
                     <div class="iconBx">
-                        <ion-icon name="cart-outline"></ion-icon>
+                        <ion-icon name="people-outline"></ion-icon>
                     </div>
                 </div>
 
@@ -170,12 +170,12 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">$7,842</div>
-                        <div class="cardName">Earning</div>
+                        <div class="numbers">42</div>
+                        <div class="cardName">Total Teachers</div>
                     </div>
 
                     <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                    <ion-icon name="people-outline"></ion-icon>
                     </div>
                 </div>
             </div>

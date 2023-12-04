@@ -3,6 +3,8 @@ include "../../../connect.php";
 $query = "SELECT booking.* , students.nom , teachers.nom AS teacher_name FROM `booking` INNER JOIN `students` ON booking.student_id = students.id INNER JOIN `teachers` ON booking.teacher_id = teachers.id;";
 $result = mysqli_query($connect , $query);
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +107,7 @@ $result = mysqli_query($connect , $query);
                 </li>
 
                 <li>
-                    <a href="../../../auth/login.php">
+                    <a href="../../../controller/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -134,8 +136,8 @@ $result = mysqli_query($connect , $query);
                         <img src="../../../assets/images/me.jpg" alt="">
                     </div>
                     <div class="name">
-                        <p>Nabil CHABAB</p>
-                        <p>Admin</p>
+                        <p><?php echo isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : ''; ?></p>
+                        <p><?php echo isset($_COOKIE['user_role']) ? $_COOKIE['user_role'] : ''; ?></p>
                     </div>
                 </div>
             </div>

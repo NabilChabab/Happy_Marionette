@@ -1,7 +1,7 @@
 <?php
 
 
-include "../../../constant/database/connect.php";
+include "../../../connect.php";
 
 $id = $_GET['id'];
 
@@ -95,7 +95,7 @@ if(isset($_POST['submit'])){
           $query = mysqli_query($connect , $requet);
           while($rows = mysqli_fetch_assoc($query)){
             ?>
-            <img src="../../assets/images/<?php echo $rows['image']?>">
+            <img src="../../../assets/images/<?php echo $rows['image']?>">
             <?php
             
         

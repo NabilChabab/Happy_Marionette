@@ -110,36 +110,32 @@ include "../../controller/login_controller.php";
           <div class="card bg-glass">
             <div class="card-body px-4 py-5 px-md-5">
               <form action="" method="POST">
-                <!-- 2 column grid layout with text inputs for the first and last names -->
-                <!-- Email input -->
+              
                 <?php
-                    if(isset($error)){
-                        foreach($error as $error){
-                            echo '<span class="error-msg">'.$error.'</span>';
-                        }
-                    }
+                    if (isset($error)) {
+                      foreach ($error as $error) {
+                          echo '<span class="error-msg">' . $error . '</span>';
+                      }
+                  }
                 
                 ?>
                 <div class="form-outline mb-4">
-                  <input type="email" id="email" class="form-control" placeholder="Email" name="email"/>
+                  <input type="email" id="email" class="form-control" placeholder="Email" name="email" value="<?php echo isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : ''; ?>"/>
                   <p class="text-danger"></p>
                 </div>
 
-                <!-- Password input -->
                 <div class="form-outline mb-4">
                   <input type="password" id="password" class="form-control" placeholder="Password" name="password"/>
                   <p class="text-danger"></p>
                 </div>
 
-                <!-- Checkbox -->
                 <div class="form-check d-flex justify-content-start mb-4">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33"/>
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" name="rememberMe"/>
                   <label class="form-check-label" for="form2Example33">
                     Remembre Me
                   </label>
                 </div>
 
-                <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4 col-12" name="submit">
                     Login
                 </button>

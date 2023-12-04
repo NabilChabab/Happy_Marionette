@@ -1,5 +1,7 @@
 <?php
 include "../../../connect.php";
+
+
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +106,7 @@ include "../../../connect.php";
                 </li>
 
                 <li>
-                    <a href="../../../view/auth/login.php">
+                    <a href="../../../controller/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -133,8 +135,8 @@ include "../../../connect.php";
                         <img src="../../../assets/images/me.jpg" alt="">
                     </div>
                     <div class="name">
-                        <p>Nabil CHABAB</p>
-                        <p>Admin</p>
+                        <p><?php echo isset($_COOKIE['user_name']) ? $_COOKIE['user_name'] : ''; ?></p>
+                        <p><?php echo isset($_COOKIE['user_role']) ? $_COOKIE['user_role'] : ''; ?></p>
                     </div>
                 </div>
             </div>
