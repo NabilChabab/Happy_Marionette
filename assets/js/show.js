@@ -20,6 +20,7 @@ function getData(callback) {
   
   
   function displayDataInTable(data) {
+    document.querySelector('.data-table').style.marginTop = '0';
     const tableBody = document.querySelector("#data-table tbody");
     tableBody.innerHTML = '';
     const searchInput = document.getElementById("search");
@@ -28,6 +29,7 @@ function getData(callback) {
     data.forEach(item => {
       if (item.nom.toLowerCase().includes(searchTerm) || item.prenom.toLowerCase().includes(searchTerm)) {
         const row = tableBody.insertRow();
+        row.style.margin
         row.insertCell(0).textContent = item.id;
         const avatarCell = row.insertCell(1);
         row.insertCell(2).textContent = item.nom;

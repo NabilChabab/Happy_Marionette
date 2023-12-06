@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(empty($_SESSION['user_id'])){
+    header("location:auth/login.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -397,7 +406,7 @@
     </div>
 
     <!-- =========== Scripts =========  -->
-    <script src="../../../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
 
     <!-- ====== ionicons ======= -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

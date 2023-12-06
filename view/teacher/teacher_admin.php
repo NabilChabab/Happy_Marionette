@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(empty($_SESSION['user_id'])){
+    header("location:auth/login.php");
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

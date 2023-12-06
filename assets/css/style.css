@@ -317,6 +317,11 @@ body {
 .details table thead td {
   font-weight: 600;
 }
+
+.details .recentOrders table {
+  margin-top: 0;
+  /* other styles */
+}
 .details .recentOrders table tr {
   color: var(--black1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
