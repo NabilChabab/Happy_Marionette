@@ -174,7 +174,7 @@ include "../../../connect.php";
                         </p>
                         <a href="#" id="close_msg" style="color:white;font-size:25px;"><ion-icon name="close-outline"></ion-icon></a>
                     </div>
-                    <table id="data-table">
+                    <table id="data-table" class="data-table">
                         <thead>
                             <tr>
                                 <td>Numero</td>
