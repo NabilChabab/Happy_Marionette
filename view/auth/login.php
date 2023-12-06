@@ -124,12 +124,12 @@ include "../../controller/login_controller.php";
                 ?>
                 <div class="form-outline mb-4">
                   <input type="email" id="email" class="form-control" placeholder="Email" name="email" value="<?php echo isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : ''; ?>"/>
-                  <p class="text-danger"></p>
+                  <p class="email-error text-danger"></p>
                 </div>
 
                 <div class="form-outline mb-4">
                   <input type="password" id="password" class="form-control" placeholder="Password" name="password"/>
-                  <p class="text-danger"></p>
+                  <p class="password-error text-danger"></p>
                 </div>
 
                 <div class="form-check d-flex justify-content-start mb-4">
@@ -169,7 +169,7 @@ include "../../controller/login_controller.php";
     </div>
   </section>
 
-  <script src="js/login.js"></script>
+  <script src="../../assets/js/login.js"></script>
   <script src="../../../bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
