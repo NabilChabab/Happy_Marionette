@@ -28,7 +28,7 @@ include "../../../connect.php";
 <body>
     <!-- =============== Navigation ================ -->
     <div class="container">
-        <div class="navigation">
+        <div class="navigation active">
             <ul>
                 <li>
                     <a href="#">
@@ -86,7 +86,7 @@ include "../../../connect.php";
         </div>
 
         <!-- ========================= Main ==================== -->
-        <div class="main">
+        <div class="main active">
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>

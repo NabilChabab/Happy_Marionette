@@ -32,7 +32,7 @@ $result = mysqli_query($connect , $query);
 <body>
     <!-- =============== Navigation ================ -->
     <div class="container">
-        <div class="navigation">
+        <div class="navigation active">
             <ul>
                 <li>
                     <a href="#">
@@ -118,7 +118,7 @@ $result = mysqli_query($connect , $query);
         </div>
 
         <!-- ========================= Main ==================== -->
-        <div class="main">
+        <div class="main active">
             <div class="topbar">
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>

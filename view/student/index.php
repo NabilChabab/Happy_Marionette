@@ -21,6 +21,57 @@ include "../../connect.php";
         font-weight:bold;
         color:grey;
     }
+
+    .services {
+    padding: 0px 5%;
+}
+
+.card-1 {
+    background-color: var(--bg-color);
+    box-shadow: 5px 5px 50px rgba(137, 43, 226, 0.253);
+    position: relative;
+    transition: all 0.4s ease-in-out;
+    border-radius: 5px;
+}
+
+.rows {
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px , 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.card-1 img {
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: all .4s ease-in-out;
+}
+
+.card-1 img:hover {
+    filter: grayscale(0);
+    transform: scale(1.1);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.card-1 h1 {
+    padding: 20px;
+    font-size: 30px;
+}
+
+.card-1 p {
+    padding: 20px;
+    line-height: 40px;
+    margin-bottom: 1rem;
+}
+
+
  
 </style>
 <body>
@@ -65,7 +116,7 @@ include "../../connect.php";
                 </li>
 
                 <li>
-                    <a href="../../../controller/logout.php">
+                    <a href="../../controller/logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -124,37 +175,64 @@ include "../../connect.php";
             </div>
 
             <!-- ================ Order Details List ================= -->
-            <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Recent Posts</h2>
-                        <a href="add_students.php" class="btn">Add New Post</a>
-                    </div>
-                    <div class="msg" style="background-color:rgb(105, 163, 105);padding:15px;margin:15px;border-radius:5px;display:flex;justify-content:space-between;align-items:center;display:none;">
-                        <p>
-                            <?php
-                                if(isset($_GET['msg'])){
-                                    $msg = $_GET['msg'];
-                                    echo $msg;
-                                }
-                            ?>
-                        </p>
-                        <a href="#" id="close_msg" style="color:white;font-size:25px;"><ion-icon name="close-outline"></ion-icon></a>
-                    </div>
 
-              
-                   
+            <section class="services" id="services">
+        <div class="cards">
+            <div class="rows">
+                <div class="card-1" data-aos="fade-up"
+                data-aos-duration="3000">
+                    <img src="../../assets/images/blog1.png" alt="#">
+                    <h1>Mobile Development</h1>
+                    <p>Service that provides the best quality and at the request of the client, with professional work
+                        and customer support.</p>
                 </div>
 
-                <!-- ================= New Customers ================ -->
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <h2>Recent Books</h2>
-                    </div>
-                   
-                  
+                <div class="card-1" data-aos="fade-down"
+                data-aos-duration="3000">
+                    <img src="../../assets/images/blog2.png" alt="#">
+                    <h1>Web Development</h1>
+                    <p>Service that provides the best quality and at the request of the client, with professional work
+                        and customer support.</p>
+                </div>
+
+                <div class="card-1" data-aos="fade-up"
+                data-aos-duration="3000">
+                    <img src="../../assets/images/blog3.jpeg" alt="#">
+                    <h1>UI/UX Design</h1>
+                    <p>Service that provides the best quality and at the request of the client, with professional work
+                        and customer support.</p>
+                </div>
+
+                <div class="card-1" data-aos="fade-down"
+                data-aos-duration="3000">
+                    <img src="../../assets/images/blog4.jpeg" alt="#">
+                    <h1>Graphic Design</h1>
+                    <p>Service that provides the best quality and at the request of the client, with professional work
+                        and customer support.</p>
+                </div>
+
+                <div class="card-1" data-aos="fade-up"
+                data-aos-duration="3000">
+                    <img src="../../assets/images/blog5.jpeg" alt="#">
+                    <h1>Branding</h1>
+                    <p>Service that provides the best quality and at the request of the client, with professional work
+                        and customer support.</p>
+                </div>
+
+                <div class="card-1" data-aos="fade-down"
+                data-aos-duration="3000">
+                    <img src="../../assets/images/blog6.jpeg" alt="#">
+                    <h1>Comunity Mangment</h1>
+                    <p>Service that provides the best quality and at the request of the client, with professional work
+                        and customer support.</p>
                 </div>
             </div>
+        </div>
+
+
+       
+    </section>
+
 
             <!-- ======================= Cards ================== -->
         </div>
