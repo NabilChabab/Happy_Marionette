@@ -17,7 +17,6 @@ if (isset($_POST['submit'])) {
     elseif ($password != $co_password) {
         $error[] = "Passwords do not match!";
     }
-
     elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error[] = "Invalid email format!";
     }

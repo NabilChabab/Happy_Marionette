@@ -1,9 +1,5 @@
 <?php
 include "../../controller/login_controller.php";
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,7 +119,7 @@ include "../../controller/login_controller.php";
                 
                 ?>
                 <div class="form-outline mb-4">
-                  <input type="email" id="email" class="form-control" placeholder="Email" name="email" value="<?php echo isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : ''; ?>"/>
+                  <input type="email" id="email" class="form-control" placeholder="Email" name="email" value="<?php echo isset($_COOKIE['user_email']) ? $_COOKIE['user_email'] : ''; ?>" required/>
                   <p class="email-error text-danger"></p>
                 </div>
 
