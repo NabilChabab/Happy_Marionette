@@ -2,7 +2,7 @@ function getData(callback) {
     const xhr = new XMLHttpRequest();
     
     xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
+      if (xhr.status === 200) {
         const data = JSON.parse(xhr.responseText);
         callback(data);
       }
